@@ -321,6 +321,36 @@
   .toast .sw-dot{width:14px;height:14px;border-radius:4px;rotate:45deg}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
+  /* ───────── MARKDOWN PARA IA ───────── */
+  .md-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:24px;align-items:stretch}
+  .md-info{background:var(--card);border:1px solid var(--borde);border-radius:var(--r-lg);padding:34px;box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+  .md-info h3{font-family:var(--f-display);font-weight:700;font-size:21px;color:var(--azul-kuantik);letter-spacing:-.01em;margin-bottom:13px}
+  .md-info p{font-family:var(--f-display);font-weight:300;color:var(--tx-2);font-size:15px;margin-bottom:18px}
+  .md-list{list-style:none;display:flex;flex-direction:column}
+  .md-list li{position:relative;padding:11px 0 11px 24px;font-size:14px;color:var(--tx);border-top:1px solid var(--borde)}
+  .md-list li:first-child{border-top:none}
+  .md-list li::before{content:"";position:absolute;left:0;top:16px;width:9px;height:9px;border-radius:3px;background:var(--grad-marca);rotate:45deg}
+  .md-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:auto;padding-top:26px}
+  .md-btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--f-display);font-weight:600;font-size:14px;padding:12px 22px;border-radius:30px;border:1px solid transparent;cursor:pointer;transition:transform .15s,box-shadow .2s,background .15s,color .15s}
+  .md-btn .md-ic{font-size:15px;line-height:1}
+  .md-btn.primary{background:var(--grad-marca);color:#fff;box-shadow:0 8px 20px rgba(0,100,230,.22)}
+  .md-btn.primary:hover{transform:translateY(-2px);box-shadow:var(--sh-lg)}
+  .md-btn.ghost{background:#fff;color:var(--azul-kuantik);border-color:var(--ring)}
+  .md-btn.ghost:hover{background:rgba(0,100,230,.06)}
+  .md-window{background:#0E1B2E;border:1px solid rgba(0,199,255,.16);border-radius:var(--r-lg);box-shadow:var(--sh-lg);overflow:hidden;display:flex;flex-direction:column}
+  .md-bar{display:flex;align-items:center;gap:12px;padding:13px 16px;background:#12233B;border-bottom:1px solid rgba(255,255,255,.06)}
+  .md-dots{display:flex;gap:7px;flex:none}
+  .md-dots i{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.18)}
+  .md-dots i:first-child{background:var(--azul-electrico)}
+  .md-dots i:nth-child(2){background:var(--azul-medio)}
+  .md-file{font-family:var(--f-ui);font-size:12.5px;color:rgba(255,255,255,.62);letter-spacing:.01em}
+  .md-copybtn{margin-left:auto;font-family:var(--f-social);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--azul-electrico);background:rgba(0,199,255,.1);border:1px solid rgba(0,199,255,.28);border-radius:18px;padding:5px 12px;cursor:pointer;transition:background .15s}
+  .md-copybtn:hover{background:rgba(0,199,255,.2)}
+  .md-code{margin:0;padding:22px;font-family:'SF Mono',ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;font-size:12.5px;line-height:1.7;color:#C7D6EC;white-space:pre;overflow:auto;max-height:380px;tab-size:2}
+  .md-code::-webkit-scrollbar{width:9px;height:9px}
+  .md-code::-webkit-scrollbar-thumb{background:rgba(0,199,255,.25);border-radius:8px}
+  .md-code::-webkit-scrollbar-track{background:transparent}
+
   /* ───────── RESPONSIVE ───────── */
   @media(max-width:1080px){
     .swatches,.type-grid,.use-grid,.tex-grid,.apps,.grads{grid-template-columns:repeat(2,1fr)}
@@ -338,7 +368,7 @@
     section{padding:56px 0}
   }
   @media(max-width:560px){
-    .swatches,.type-grid,.use-grid,.tex-grid,.apps,.grads,.forbidden,.logo-grid,.anatomy,.traits,.voice,.protect,.contrast,.rules,.ess{grid-template-columns:1fr}
+    .swatches,.type-grid,.use-grid,.tex-grid,.apps,.grads,.forbidden,.logo-grid,.anatomy,.traits,.voice,.protect,.contrast,.rules,.ess,.md-grid{grid-template-columns:1fr}
     .neutrals{grid-template-columns:repeat(3,1fr)}
     .ess{display:flex;flex-direction:column}
   }
@@ -365,6 +395,7 @@
       <a href="#texturas">Texturas</a>
       <a href="#aplicaciones">Aplicación</a>
       <a href="#accesibilidad">Accesibilidad</a>
+      <a href="#markdown">Markdown para IA</a>
     </nav>
   </div>
 </header>
@@ -677,6 +708,39 @@
     </div>
   </section>
 
+  <!-- MARKDOWN PARA IA -->
+  <section id="markdown">
+    <div class="wrap">
+      <div class="sec-head reveal"><span class="sec-idx">09</span><span class="sec-eyebrow">Para agentes de IA</span><h2>Directrices en Markdown</h2><p>Lleva la identidad de Kuantik a cualquier herramienta de IA. Copia o descarga estas directrices en un archivo Markdown listo para pegar en el contexto de tu agente (ChatGPT, Claude, Cursor, v0…) y generar piezas siempre fieles a la marca.</p></div>
+
+      <div class="md-grid reveal">
+        <div class="md-info">
+          <h3>Una sola fuente de verdad</h3>
+          <p>El archivo resume lo esencial del sistema visual en un formato compacto y legible por máquinas: colores con su rol y HEX, tipografías con su uso, degradados permitidos, tono de voz y reglas de accesibilidad.</p>
+          <ul class="md-list">
+            <li>Paleta completa (primarios y neutros) con código HEX y uso.</li>
+            <li>Tipografías Poppins, Montserrat y Roboto con su rol.</li>
+            <li>Degradado de marca y reglas de uso prohibido.</li>
+            <li>Tono de voz y notas de accesibilidad (WCAG).</li>
+          </ul>
+          <div class="md-actions">
+            <button class="md-btn primary" id="mdDownload" type="button"><span class="md-ic">↓</span> Descargar .md</button>
+            <button class="md-btn ghost" id="mdCopy" type="button"><span class="md-ic">⧉</span> Copiar Markdown</button>
+          </div>
+        </div>
+
+        <div class="md-window">
+          <div class="md-bar">
+            <span class="md-dots"><i></i><i></i><i></i></span>
+            <span class="md-file">kuantik-brand-guidelines.md</span>
+            <button class="md-copybtn" id="mdCopyTop" type="button">Copiar</button>
+          </div>
+          <pre class="md-code" id="mdCode" aria-label="Vista previa de las directrices en Markdown"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="wrap">
       <div style="display:flex;align-items:center;gap:14px">
@@ -705,6 +769,111 @@
   var toast=document.getElementById('toast'),tt=document.getElementById('toastTxt'),td=document.getElementById('toastDot'),tmo;
   function copy(val,color){navigator.clipboard&&navigator.clipboard.writeText(val);tt.textContent=val+' copiado';td.style.background=color||'#00C7FF';toast.classList.add('show');clearTimeout(tmo);tmo=setTimeout(function(){toast.classList.remove('show');},1500);}
   document.addEventListener('click',function(e){var el=e.target.closest('[data-copy]');if(el){copy(el.getAttribute('data-copy'),el.getAttribute('data-color'));}});
+
+  // ───────── Markdown para IA ─────────
+  var MD = [
+'# Guía Visual de Marca — Kuantik',
+'',
+'Sistema de identidad visual de **Kuantik**. Úsalo como única fuente de verdad al',
+'generar cualquier pieza de diseño, UI, copy o comunicación para la marca.',
+'',
+'## Esencia',
+'- Concepto: "Automatización fiscal en movimiento" — convierte la complejidad fiscal en algo simple, automático y en avance.',
+'- Personalidad: confiable + ágil, moderna, luminosa y siempre en movimiento.',
+'- El isotipo son dos cuadros redondeados entrelazados que sugieren "play / avanzar" (la idea de GO).',
+'- Lenguaje visual: azul, limpio, luminoso. Combina solidez de herramienta fiscal seria con agilidad de app moderna.',
+'',
+'## Colores primarios',
+'| Rol | Nombre | HEX | Uso |',
+'|-----|--------|-----|-----|',
+'| Acento | Azul Eléctrico | #00C7FF | Acentos y degradados. NO usar como color de texto (contraste insuficiente). |',
+'| Secundario | Azul Medio | #0064E6 | Botones, enlaces y degradados. |',
+'| Principal | Azul Kuantik | #005ABE | Color base de marca, titulares y fondos sólidos. |',
+'| Interfaz | Azul Interfaz | #0154A0 | UI, estados y superficies de plataforma. |',
+'| Apoyo | Azul Vector | #0090F2 | Punto medio de degradados de interfaz. |',
+'| Apoyo | Azul Profundo | #005FC0 | Cierre de degradados y heros. |',
+'',
+'## Colores neutros',
+'| Nombre | HEX | Uso |',
+'|--------|-----|-----|',
+'| Azul Noche | #1E293B | Texto principal (en lugar de negro puro). |',
+'| Gris Acero | #9BA3AF | Iconografía secundaria. |',
+'| Gris Medio | #A6ADB7 | Texto deshabilitado y bordes suaves. |',
+'| Gris Borde | #E5E7EB | Bordes y divisores. |',
+'| Gris Claro | #F3F4F6 | Fondos de sección y tarjetas. |',
+'| Casi Blanco | #FAF9F9 | Fondos cálidos. |',
+'| Blanco | #FFFFFF | Superficies y texto sobre azul. |',
+'',
+'### Texto',
+'- Principal: #1E293B · Secundario: #4A5568 · Terciario / metadata: #8A94A6',
+'- Fondo base de la marca: #F7F9FC',
+'',
+'## Degradados permitidos',
+'- Degradado Marca: linear-gradient(120deg, #00C7FF, #0064E6) — banners, headers y botones principales.',
+'- Degradado Profundo: linear-gradient(135deg, #005ABE, #00C7FF) — heros y pantallas de bienvenida.',
+'- Degradado Interfaz: linear-gradient(135deg, #00C7FF, #0090F2 52%, #005FC0) — sidebars, paneles y estados activos.',
+'',
+'### Uso de color NO permitido',
+'- Negro puro (#000000) como texto → usar Azul Noche #1E293B.',
+'- Gradientes fuera de la familia azul.',
+'- Mezclar el azul con cualquier otro color, ni en detalles decorativos.',
+'',
+'## Tipografías',
+'| Familia | Rol | Pesos | Uso |',
+'|---------|-----|-------|-----|',
+'| Poppins | Display / Landing | 300, 400, 500, 600, 700, 800 | Titulares y texto de landing page. |',
+'| Montserrat | Social / Display | 500, 600, 700, 800 | Redes sociales, anuncios y eyebrows/badges. |',
+'| Roboto | UI / Plataforma | 300, 400, 500, 700 | Interfaz de producto, datos y metadata. |',
+'',
+'Cada familia tiene un rol fijo: no se intercambian entre contextos.',
+'',
+'### Jerarquía de tamaños',
+'- Display: 48–68px / 800 / Montserrat',
+'- H1: 36–48px / 700 / Poppins',
+'- H2: 24–32px / 600 / Poppins',
+'- H3 UI: 18–20px / 500 / Roboto',
+'- Body: 14–16px / 400 / Poppins o Roboto',
+'- Caption: 11–12px / 400 / Roboto',
+'- Eyebrow: 10–11px / 700 / Montserrat (mayúsculas, tracking .12em)',
+'',
+'## Tono de voz',
+'**Sí:** directo y humano, motivador y en presente, claro sobre lo fiscal sin asustar, seguro pero cercano.',
+'**No:** jerga fiscal innecesaria, promesas absolutas, tono alarmista sobre multas, texto frío o robótico.',
+'Ejemplos: "Tu declaración en 3 minutos." · "Automatiza. Cumple. Crece."',
+'',
+'## Accesibilidad (WCAG 2.1)',
+'- Objetivo mínimo: AA para texto normal, AAA para texto crítico.',
+'- #00C7FF NO es color de texto sobre fondo claro (1.9:1). Úsalo solo como acento decorativo.',
+'- Texto sobre Azul Kuantik #005ABE: usar blanco (8.6:1, AAA).',
+'- Tamaño mínimo de texto: 14px en plataforma, 16px en landing; 12px solo para metadata.',
+'- El color nunca es la única señal: estados de error/éxito siempre con ícono o texto.',
+'- Foco visible: ring de 2px en #005ABE o #0064E6 con offset.',
+'- Área táctil mínima en móvil: 44×44px.',
+'',
+'## Logo',
+'- Usar siempre el archivo vectorial original (SVG); nunca recrear, redibujar ni capturar de pantalla.',
+'- Isotipo como watermark: 10–15% de opacidad en documentos y slides.',
+''
+  ].join('\n');
+
+  var codeEl=document.getElementById('mdCode');
+  if(codeEl)codeEl.textContent=MD;
+
+  function showToast(msg,color){tt.textContent=msg;td.style.background=color||'#00C7FF';toast.classList.add('show');clearTimeout(tmo);tmo=setTimeout(function(){toast.classList.remove('show');},1500);}
+  function downloadMd(){
+    var blob=new Blob([MD],{type:'text/markdown;charset=utf-8'});
+    var url=URL.createObjectURL(blob),a=document.createElement('a');
+    a.href=url;a.download='kuantik-brand-guidelines.md';document.body.appendChild(a);a.click();
+    document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(url);},1000);
+    showToast('Archivo .md descargado','#00C7FF');
+  }
+  function copyMd(){
+    if(navigator.clipboard)navigator.clipboard.writeText(MD);
+    showToast('Markdown copiado','#0064E6');
+  }
+  var dl=document.getElementById('mdDownload');if(dl)dl.addEventListener('click',downloadMd);
+  var cp=document.getElementById('mdCopy');if(cp)cp.addEventListener('click',copyMd);
+  var cpt=document.getElementById('mdCopyTop');if(cpt)cpt.addEventListener('click',copyMd);
 })();
 </script>
 </body>
